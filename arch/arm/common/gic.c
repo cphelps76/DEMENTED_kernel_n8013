@@ -345,7 +345,7 @@ static void __init gic_dist_init(struct gic_chip_data *gic,
 	writel_relaxed(1, base + GIC_DIST_CTRL);
 }
 
-static void __cpuinit gic_cpu_init(struct gic_chip_data *gic)
+static void gic_cpu_init(struct gic_chip_data *gic)
 {
 	void __iomem *dist_base = gic_data_dist_base(gic);
 	void __iomem *base = gic_data_cpu_base(gic);
@@ -399,7 +399,7 @@ void __init gic_init(unsigned int gic_nr, unsigned int irq_start,
 	gic_cpu_init(gic);
 }
 
-void __cpuinit gic_secondary_init_base(unsigned int gic_nr,
+void gic_secondary_init_base(unsigned int gic_nr,
 				       void __iomem *dist_base,
 				       void __iomem *cpu_base)
 {
@@ -412,7 +412,7 @@ void __cpuinit gic_secondary_init_base(unsigned int gic_nr,
 	gic_cpu_init(&gic_data[gic_nr]);
 }
 
-void __cpuinit gic_enable_ppi(unsigned int irq)
+void gic_enable_ppi(unsigned int irq)
 {
 	unsigned long flags;
 

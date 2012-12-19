@@ -76,7 +76,7 @@ static void __iomem *scu_base_addr(void)
 
 static DEFINE_SPINLOCK(boot_lock);
 
-void __cpuinit platform_secondary_init(unsigned int cpu)
+void platform_secondary_init(unsigned int cpu)
 {
 	void __iomem *dist_base = S5P_VA_GIC_DIST +
 				 (gic_bank_offset * cpu);
@@ -138,7 +138,7 @@ static int exynos_power_up_cpu(unsigned int cpu)
 	return 0;
 }
 
-int __cpuinit boot_secondary(unsigned int cpu, struct task_struct *idle)
+int boot_secondary(unsigned int cpu, struct task_struct *idle)
 {
 	unsigned long timeout;
 	int ret;

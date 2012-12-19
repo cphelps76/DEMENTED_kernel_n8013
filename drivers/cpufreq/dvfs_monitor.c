@@ -99,7 +99,7 @@ static int dvfs_monitor_trans(struct notifier_block *nb,
 	return 0;
 }
 
-static int __cpuinit dvfs_monitor_hotplug(struct notifier_block *nb,
+static int dvfs_monitor_hotplug(struct notifier_block *nb,
 					  unsigned long action,
 					  void *hcpu)
 {
