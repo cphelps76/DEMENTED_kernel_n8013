@@ -1940,7 +1940,7 @@ err:
    }
 
    free_vm_area(vm->wspHkvaArea);
-   vm->wspHkvaArea = (HKVA)NULL;
+   vm->wspHkvaArea = NULL;
 
    return 0;
 }
