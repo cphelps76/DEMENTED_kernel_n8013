@@ -105,7 +105,6 @@ config DEFAULT_IOSCHED
     default "row" if DEFAULT_ROW
     default "sio" if DEFAULT_SIO
 	default "noop" if DEFAULT_NOOP
-	default "sio" if DEFAULT_SIO
 	default "zen" if DEFAULT_ZEN
 
 endmenu
