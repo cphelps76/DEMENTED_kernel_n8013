@@ -16,8 +16,10 @@ export CROSS_COMPILE=/home/cphelps76/kernel/arm-eabi-4.6/bin/arm-eabi-
 
 time_start=$(date +%s.%N)
 
-# echo "Remove old Package Files"
-# rm -rf $PACKAGEDIR/* > /dev/null 2>&1
+echo "Remove old Package Files"
+rm -rf $PACKAGEDIR/system
+rm -rf $PACKAGEDIR/boot.img
+rm -rf $PACKAGEDIR/DEMENTEDKernel-GT-N8013-*
 
 echo "Setup Package Directory"
 mkdir -p $PACKAGEDIR/system/lib/modules
@@ -68,7 +70,7 @@ if [ -e $KERNELDIR/arch/arm/boot/zImage ]; then
 	cp -R ../META-INF
 	rm ramdisk.gz
 	rm zImage
-	zip -r ../DEMENTEDKernel-GT-N8013-$curdate.zip .
+	zip -r $PACKAGEDIR/DEMENTEDKernel-GT-N8013-$curdate.zip .
 	cd $KERNELDIR
 else
 	echo "KERNEL DID NOT BUILD! no zImage exist"
