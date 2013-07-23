@@ -12,7 +12,7 @@ export USE_SEC_FIPS_MODE=true
 export ARCH=arm
 echo "### GNote 10.1 KERNEL BUILD ###"
 echo "Setting compiler toolchain..."
-export CROSS_COMPILE=/home/*/roms/kernel/linaro/bin/arm-eabi-
+export CROSS_COMPILE=/home/*/roms/kernel/arm-eabi-4.7/bin/arm-eabi-
 
 time_start=$(date +%s.%N)
 
